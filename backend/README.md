@@ -46,10 +46,10 @@ Exemplo de conteúdo do arquivo `.env`:
 
 ```bash
 # Banco (Supabase)
-DATABASE_URL="postgresql://postgres:<SUA_SENHA>@db.iboklssetogmioikemlg.supabase.co:5432/postgres?sslmode=require"
+DATABASE_URL="postgresql://postgres:<SUA_SENHA>@supabase_aqui:5432/postgres?sslmode=require"
 
 # Supabase
-SUPABASE_URL="https://iboklssetogmioikemlg.supabase.co"
+SUPABASE_URL="https://supabase_aqui"
 SUPABASE_KEY="<SUA_SUPABASE_KEY>"
 
 # JWT
@@ -58,11 +58,11 @@ JWT_EXPIRES_IN_SECONDS=900
 
 # Seed / Provisionamento
 SEED_DEFAULT_ADMIN=true
-PROVISIONING_TOKEN="santoDeus@1"
+PROVISIONING_TOKEN="Token aqui"
 
 # Integração N8N
 N8N_TIMEOUT_MS=60000
-N8N_VALIDATE_DEVICE_URL="https://n8n.h-check.com.br:25678/webhook/validate-device"
+N8N_VALIDATE_DEVICE_URL="https://n8n-aqui:25678/webhook/validate-device"
 ```
 
 ### 2) Build da imagem
