@@ -211,7 +211,7 @@ A interface prioriza tons suaves, tipografia clássica, respiro visual e foco na
 
 ### 👤 Autor
 
-Desenvolvido por **mk**.
+Desenvolvido por **Gabriel Chaves Ribeiro Pereira**.
 
 Se este projeto te interessou, fique à vontade para acompanhar sua evolução.
 
