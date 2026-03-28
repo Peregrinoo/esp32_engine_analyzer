@@ -1,158 +1,218 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=E66C07&height=120&section=header"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=D8C3A5&height=120&section=header"/>
 
-# Rotorial – Sistema Embarcado para Monitoramento e Análise Preditiva de Motores Elétricos <img width='50' heigth='50' src="img/LOGO.png" />
+# Ordinis – Reflexões cristãs diárias para ordenar o amor 🤍
 
 <p align="center">
-    <img width='700' src="img/PROTOTIPO.jpg" alt="exemplo em vídeo">
+  <img src="assets/readme/splash.png" width="220" alt="Splash screen do Ordinis" />
+  <img src="assets/readme/home.png" width="220" alt="Tela principal do Ordinis" />
+  <img src="assets/readme/favorites.png" width="220" alt="Tela de favoritos do Ordinis" />
 </p>
 
-> _Protótipo montado na protoboard para validação inicial_
+<p align="center">
+  <i>Ordenando o amor, um dia por vez.</i>
+</p>
 
-Este repositório contém o código-fonte completo do **Rotorial**, um sistema embarcado de monitoramento contínuo e análise preditiva de motores elétricos, desenvolvido com foco em **Indústria 4.0**, **manutenção preditiva** e **eficiência energética**.
+---
 
-O projeto integra **hardware embarcado**, **firmware em ESP32**, **backend web** e **dashboard frontend**, permitindo a coleta de dados em tempo real, visualização remota e detecção automática de condições anômalas de operação.
+## EN
 
-## 🎯 Objetivo do Projeto
+> Daily Christian reflections inspired by Saint Augustine, designed to help the soul return to what truly matters.
 
-Desenvolver uma solução acessível e escalável para o monitoramento de motores elétricos industriais, capaz de:
+### ✨ About the App
 
-* Coletar variáveis elétricas e térmicas em tempo real (tensão, corrente e temperatura);
-* Processar e transmitir os dados via Wi-Fi;
-* Exibir as informações em um dashboard web intuitivo;
-* Detectar automaticamente desvios de operação por meio de thresholds manuais ou orientados por Inteligência Artificial;
-* Auxiliar na **detecção precoce de falhas**, **redução de paradas não planejadas** e **otimização do consumo energético**.
+**Ordinis** is a mobile application centered on daily Christian reflections, inspired by **Saint Augustine** and the pursuit of a life in communion with **Jesus Christ**.
 
-## 🧱 Estrutura do Repositório (pastas principais)
+The app was designed to offer a daily pause for contemplation, helping the user cultivate:
+- interior silence
+- truth
+- ordered love
+- spiritual recollection
+- communion with God
 
-```
-.
-├── firmware/   # Código embarcado (ESP32-S3)
-├── backend/    # API, regras de negócio, telemetria e alarmes
-├── frontend/   # Dashboard web para visualização e operação
-└── README.md   # Documentação geral do projeto
-```
+More than simply displaying quotes, Ordinis seeks to transform timeless spiritual wisdom into an accessible daily experience through a careful, elegant, and contemplative interface.
 
-Cada módulo possui responsabilidades bem definidas e pode ser executado de forma independente.
+---
 
-## Firmware (ESP32-S3)
+### 🎯 Purpose
 
-O firmware é o núcleo do sistema embarcado e é responsável pela **aquisição de dados**, **processamento local**, **comunicação com o backend** e **interface web local para provisionamento**.
+The main purpose of Ordinis is to make Christian reflection something:
+- beautiful
+- simple
+- accessible
+- daily
+- meaningful
 
-### 🛠️ Tecnologias e Dependências
+In a distracted and accelerated world, the app invites the user to slow down and return to the essential.
 
-O firmware foi desenvolvido utilizando o **Arduino Framework para ESP32**, com suporte a multitarefa via FreeRTOS.
+---
 
-Principais bibliotecas de terceiros utilizadas:
+### 📱 Main Features
 
-* **Wire** – Comunicação I²C
-* **Adafruit_MCP3421** – Interface com conversores A/D externos (18 bits)
-* **Adafruit_BME280** e **Adafruit_Sensor** – Leitura de temperatura
-* **WiFi** – Conectividade Wi-Fi
-* **HTTPClient** – Envio de telemetria via HTTP
-* **ESPAsyncWebServer** – Servidor web embarcado assíncrono
-* **AsyncTCP** – Suporte TCP assíncrono
-* **ArduinoJson** – Serialização e desserialização de mensagens JSON
-* **Preferences** – Armazenamento persistente em NVS (flash)
+- Daily reflection system
+- Modern explanatory interpretation for each excerpt
+- Favorites system
+- Reflection sharing
+- Offline-first experience
+- Elegant and contemplative UI
+- Support for local content loading
+- Expandable architecture for future features
 
-### ⚙️ Funcionalidades do Firmware
+---
 
-* Leitura de:
+### 🧱 Tech Stack
 
-  * Corrente elétrica (ACS712 + MCP3421)
-  * Tensão elétrica (transformador + retificador + MCP3421)
-  * Temperatura (BME280)
-* Cálculo de valores eficazes (RMS) para grandezas elétricas;
-* Execução concorrente de tarefas usando FreeRTOS;
-* Comunicação segura com backend via HTTP;
-* Servidor web local para:
+- **Framework:** Flutter
+- **Language:** Dart
+- **State Management:** Provider
+- **Local Data:** JSON asset
+- **Storage:** SharedPreferences / local persistence
+- **Typography:** Google Fonts
+- **Architecture:** Modular and scalable, feature-oriented
 
-  * Login
-  * Provisionamento do dispositivo
-  * Associação com máquinas e pátios
-* Armazenamento persistente de configurações e estado do dispositivo;
-* Envio periódico de telemetria para análise e geração de alarmes.
+---
 
-### ▶️ Como Executar o Firmware
+### 📦 Libraries and Tools
 
-#### Pré-requisitos
+- `provider`
+- `google_fonts`
+- `shared_preferences`
+- Native Flutter navigation
+- Local JSON loading
+- Custom UI components
 
-* ESP32-S3
-* Arduino IDE ou PlatformIO
-* Driver USB do ESP32 instalado
-* Hardware conectado (sensores e condicionamento de sinal)
+---
 
-#### Passos básicos
+### 🎨 Design Principles
 
-1. Abra o projeto localizado em `firmware/src/main.cpp`
-2. Instale as bibliotecas listadas acima
-3. Configure:
+Ordinis was designed with a visual identity that reflects:
+- serenity
+- contemplation
+- sobriety
+- beauty
+- spiritual warmth
 
-   * Credenciais Wi-Fi
-   * URL do backend
-4. Selecione a placa **ESP32-S3**
-5. Compile e faça o upload do firmware
-6. Acesse o IP do dispositivo via navegador para provisionamento
+The interface prioritizes soft tones, classical typography, generous spacing, and a reading-focused presentation.
 
-## 🌐 Backend
+---
 
-O backend é responsável por **autenticação**, **gerenciamento de máquinas**, **ingestão de telemetria**, **avaliação de thresholds** e **geração de alarmes**.
+### 📸 Screenshots
 
-* Linguagem: **TypeScript**
-* Framework: **NestJS**
-* Banco de dados: **PostgreSQL (Supabase)**
-* ORM: **Prisma**
-* Autenticação: **JWT (access + refresh tokens)**
-* Integração com IA: **N8N**
+<p align="center">
+  <img src="assets/readme/splash.png" width="220" alt="Splash screen" />
+  <img src="assets/readme/home.png" width="220" alt="Home screen" />
+  <img src="assets/readme/favorites.png" width="220" alt="Favorites screen" />
+</p>
 
-📄 Para detalhes completos de endpoints e configuração, consulte o README específico em:
+---
 
-```
-backend/README.md
-```
+## PT-BR
 
-## 📊 Frontend
+> Reflexões cristãs diárias inspiradas em Santo Agostinho, pensadas para ajudar a alma a voltar ao essencial.
 
-O frontend fornece um **dashboard web moderno** para visualização dos dados e operação do sistema.
+### ✨ Sobre o App
 
-* Linguagem: **TypeScript**
-* Framework: **React + Vite**
-* UI: **Mantine**
-* Gráficos: **Recharts**
-* Data fetching: **TanStack Query**
-* HTTP: **Axios**
+**Ordinis** é um aplicativo mobile de reflexões cristãs diárias, inspirado em **Santo Agostinho** e na busca de uma vida em comunhão com **Jesus Cristo**.
 
-Funcionalidades principais:
+O app foi idealizado para oferecer um momento diário de pausa e contemplação, ajudando o usuário a cultivar:
+- silêncio interior
+- verdade
+- amor ordenado
+- recolhimento espiritual
+- comunhão com Deus
 
-* Visualização em tempo real das variáveis monitoradas;
-* Histórico de medições;
-* Alarmes e status das máquinas;
-* Controle de usuários e permissões;
-* Interface responsiva com modo claro/escuro.
+Mais do que exibir frases, o Ordinis busca transformar sabedoria espiritual atemporal em uma experiência cotidiana acessível, bela e contemplativa.
 
-📄 Mais detalhes no README localizado em:
+---
 
-```
-frontend/README.md
-```
+### 🎯 Propósito
 
-## 🧠 Inteligência Artificial e Thresholds
+O principal propósito do Ordinis é tornar a reflexão cristã algo:
+- belo
+- simples
+- acessível
+- diário
+- significativo
 
-O sistema de thresholds define limites aceitáveis de operação para cada máquina, permitindo a detecção automática de desvios.
+Em um mundo acelerado e disperso, o aplicativo convida o usuário a desacelerar e retornar ao essencial.
 
-* **Manual**: operador define limites de alerta e crítico;
-* **Orientado por IA (N8N)**:
+---
 
-  * Busca automática de datasheets do motor;
-  * Extração de informações via OCR;
-  * Segmentação em trechos (chunks);
-  * Cálculo de relevância para definição dos limites operacionais.
+### 📱 Funcionalidades Principais
 
-Esse mecanismo torna o sistema mais inteligente e adaptável a diferentes tipos de motores industriais.
+- Sistema de reflexão diária
+- Interpretação moderna de cada trecho
+- Sistema de favoritos
+- Compartilhamento de reflexões
+- Experiência offline-first
+- Interface elegante e contemplativa
+- Suporte a carregamento local de conteúdo
+- Arquitetura preparada para expansão futura
 
-## 🚀 Possibilidades de Evolução
+---
 
-* Inclusão de sensores de vibração e potência elétrica;
-* Modelos de IA baseados em séries temporais;
-* Armazenamento local para operação offline;
-* Desenvolvimento de PCB dedicada;
-* Integração com sistemas industriais (SCADA, MQTT, OPC-UA).
+### 🧱 Stack Técnica
+
+- **Framework:** Flutter
+- **Linguagem:** Dart
+- **Gerenciamento de Estado:** Provider
+- **Dados locais:** JSON em asset
+- **Persistência:** SharedPreferences / armazenamento local
+- **Tipografia:** Google Fonts
+- **Arquitetura:** Modular e escalável, orientada a features
+
+---
+
+### 📦 Bibliotecas e Ferramentas
+
+- `provider`
+- `google_fonts`
+- `shared_preferences`
+- Navegação nativa do Flutter
+- Leitura de JSON local
+- Componentização de UI customizada
+
+---
+
+### 🎨 Princípios de Design
+
+O Ordinis foi pensado com uma identidade visual que transmite:
+- serenidade
+- contemplação
+- sobriedade
+- beleza
+- calor espiritual
+
+A interface prioriza tons suaves, tipografia clássica, respiro visual e foco na leitura.
+
+---
+
+### 📸 Imagens do App
+
+<p align="center">
+  <img src="assets/readme/splash.png" width="220" alt="Tela de abertura do Ordinis" />
+  <img src="assets/readme/home.png" width="220" alt="Tela principal do Ordinis" />
+  <img src="assets/readme/favorites.png" width="220" alt="Tela de favoritos do Ordinis" />
+</p>
+
+---
+
+### 🚀 Possibilidades Futuras
+
+- Notificações diárias
+- Categorias de reflexões
+- Busca por temas
+- Marcação por tags
+- Histórico de leituras
+- Sincronização em nuvem
+- Modo escuro
+- Compartilhamento visual com imagem gerada
+
+---
+
+### 👤 Autor
+
+Desenvolvido por **mk**.
+
+Se este projeto te interessou, fique à vontade para acompanhar sua evolução.
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=D8C3A5&height=120&section=footer"/>
